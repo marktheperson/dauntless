@@ -1,5 +1,5 @@
 # Dauntless
---
+
 The purpose of this website is to make it easier for clan members from Dauntless of Lineage 2: Revolution to get the latest clan info. The main sections are the schedule, raid groups, attendance, contributions, and prizes.
 
 ## Design
@@ -8,7 +8,7 @@ The rationale behind making a website for this purpose is to make it easier for 
 
 The site will be a one page website which pulls data from a Google Sheets document. It will eventually have filters to allow each member to see the necessary information as a short summary. For now, it will have multiple sections which contain the information for the entire clan.
 
-##Content
+## Content
 
 ### Schedule
 
