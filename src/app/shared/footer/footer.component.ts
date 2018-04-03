@@ -11,4 +11,10 @@ export class FooterComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {}
+
+    goToLink(whereToGo) {
+        try {
+            document.querySelector('#' + whereToGo).scrollIntoView();
+        } catch (e) { }
+    }
 }

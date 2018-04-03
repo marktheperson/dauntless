@@ -4,11 +4,14 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
+import { HttpModule } from '@angular/http';
 
 import { HomeComponent } from './home.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 
 import { ComponentsModule } from '../components/components.module';
+import { AttendanceComponent } from './attendance/attendance.component';
+import { PointsComponent } from './points/points.component';
 
 @NgModule({
     imports: [
@@ -16,11 +19,15 @@ import { ComponentsModule } from '../components/components.module';
         BrowserModule,
         FormsModule,
         RouterModule,
-        ComponentsModule
+        ComponentsModule,
+        NgbModule,
+        HttpModule
     ],
     declarations: [ 
         HomeComponent, 
-        ScheduleComponent 
+        ScheduleComponent,
+        AttendanceComponent,
+        PointsComponent 
     ],
     exports:[ 
         HomeComponent 

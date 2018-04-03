@@ -1,1 +1,57 @@
-schedule compontent
+<div id="schedule" class="section">
+    <div class="container">
+        <h1>Schedule</h1>
+        <ngb-tabset>
+            <ngb-tab>
+                <ng-template ngbTabTitle>
+                    <b>Today</b>
+                </ng-template>
+                <ng-template ngbTabContent>
+                    <div class="day-event" *ngFor="let dayEvent of daySchedule">
+                        <strong>{{dayEvent.Time}}</strong> - {{dayEvent.EventName}}
+                    </div>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab>
+                <ng-template ngbTabTitle>
+                    <b>Week</b>
+                </ng-template>
+                <ng-template ngbTabContent>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Time</th>
+                                <th scope="col">M<span *ngIf="!mobileView">onday</span></th>
+                                <th scope="col">T<span *ngIf="!mobileView">uesday</span></th>
+                                <th scope="col">W<span *ngIf="!mobileView">ednesday</span></th>
+                                <th scope="col">T<span *ngIf="!mobileView">hursday</span></th>
+                                <th scope="col">F<span *ngIf="!mobileView">riday</span></th>
+                                <th scope="col">Sa<span *ngIf="!mobileView">turday</span></th>
+                                <th scope="col">Su<span *ngIf="!mobileView">nday</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let row of fullSchedule">
+                                <th scope="row">{{row[0]}}</th>
+                                <td><i *ngIf="row[1] != ''" [ngClass]="'keys nc-icon ' + handleClanEvent(row[1])"></i></td>
+                                <td><i *ngIf="row[2] != ''" [ngClass]="'keys nc-icon ' + handleClanEvent(row[2])"></i></td>
+                                <td><i *ngIf="row[3] != ''" [ngClass]="'keys nc-icon ' + handleClanEvent(row[3])"></i></td>
+                                <td><i *ngIf="row[4] != ''" [ngClass]="'keys nc-icon ' + handleClanEvent(row[4])"></i></td>
+                                <td><i *ngIf="row[5] != ''" [ngClass]="'keys nc-icon ' + handleClanEvent(row[5])"></i></td>
+                                <td><i *ngIf="row[6] != ''" [ngClass]="'keys nc-icon ' + handleClanEvent(row[6])"></i></td>
+                                <td><i *ngIf="row[7] != ''" [ngClass]="'keys nc-icon ' + handleClanEvent(row[7])"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="text-center">
+                        <i class="nc-icon nc-user-run keys"></i> Dungeon Run
+                        <i class="nc-icon nc-bold keys"></i> Core Buff
+                        <i class="nc-icon nc-istanbul keys"></i> Fortress Siege
+                        <i class="nc-icon nc-ambulance keys"></i> PE Help
+                        <i class="nc-icon nc-vector keys"></i> Open Siege
+                    </div>
+                </ng-template>
+            </ngb-tab>
+        </ngb-tabset>
+    </div>
+</div>
