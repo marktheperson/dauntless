@@ -1,0 +1,23 @@
+table {
+  margin-top: 10px;
+}
+
+.userSearch {
+  width: 200px;
+  margin-top: 10px;
+}
+
+tbody td {
+  font-weight: 400;
+}
+
+.paginator {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .table th, .table td {
+    padding: 1px;
+  }
+}

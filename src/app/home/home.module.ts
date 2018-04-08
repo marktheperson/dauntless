@@ -12,6 +12,7 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { ComponentsModule } from '../components/components.module';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { PointsComponent } from './points/points.component';
+import { NameFilterPipe } from '../dauntless.pipe';
 
 @NgModule({
     imports: [
@@ -27,7 +28,8 @@ import { PointsComponent } from './points/points.component';
         HomeComponent, 
         ScheduleComponent,
         AttendanceComponent,
-        PointsComponent 
+        PointsComponent,
+        NameFilterPipe 
     ],
     exports:[ 
         HomeComponent 

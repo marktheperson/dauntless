@@ -36,8 +36,12 @@ export class ScheduleComponent implements OnInit {
         this._dauntless.getSchedule().subscribe( (r) => {
             let res = r.json()? r.json() : [];
             res = res.filter(dayRow => dayRow.length > 1);
-            this.fullSchedule = res.map( (dayRow) => { if (dayRow.length < 8) { dayRow.push("");  } return dayRow; } );
-            this.daySchedule = this.fullSchedule.map( (dayRow) => {
+            this.fullSchedule = res.map( (dayRow) => { if (dayRow.length < 8) { 
+                dayRow = dayRow.concat( Array.from({ length: 8 - dayRow.length }).map( () => "" ) );
+             } return dayRow; } );
+            this.daySchedule = this.fullSchedule.filter( 
+                filtRow =>  filtRow[ (this.dayIndex[this.currentDayOfWeek] + 1 ) ] != ""
+            ).map( (dayRow) => {
                 return {
                     "Time": dayRow[0],
                     "EventName": this._handleDayClanEvent( dayRow[ (this.dayIndex[this.currentDayOfWeek] + 1 ) ] )

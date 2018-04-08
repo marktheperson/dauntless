@@ -14,4 +14,8 @@ export class DauntlessService {
     return this._http.get('http://api.dauntlessclan.com/schedule');
   }
 
+  getPoints():Observable<any> {
+    return this._http.get('http://api.dauntlessclan.com/points');
+  }
+
 }

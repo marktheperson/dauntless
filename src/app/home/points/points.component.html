@@ -1,6 +1,30 @@
 <div id="points" class="section">
     <div class="container">
         <h1>Points Tracking</h1>
-        <p>Text stuff here</p>
+        <input type="text" (ngModelChange)="page = 1" [(ngModel)]="userSearch" class="form-control userSearch" placeholder="Filter by name">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Latest Week</th>
+                    <th scope="col">Total Earned</th>
+                    <th scope="col">Total Purchases</th>
+                    <th scope="col">Grand Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of rows | NameFilter: userSearch | slice:(page-1)*limit:page*limit">
+                    <td>{{row.name}}</td>
+                    <td>{{row.lw}}</td>
+                    <td>{{row.te}}</td>
+                    <td>{{row.tp}}</td>
+                    <td>{{row.gt}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="paginator">
+            <ngb-pagination [collectionSize]="(rows.length / limit) * 10" [(page)]="page" aria-label="Default pagination"></ngb-pagination>
+        </div>
+        
     </div>
 </div>
