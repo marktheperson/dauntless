@@ -1,0 +1,39 @@
+tbody td {
+    font-weight: 400;
+}
+
+table {
+    margin-top: 10px;
+}
+
+.userSearch {
+    width: 200px;
+    margin-top: 10px;
+}
+
+.paginator {
+    display: flex;
+    justify-content: center;
+}
+
+.team-green {
+    background-color: rgba(76, 175, 80, 0.7);
+    color: #000;
+}
+
+.team-red {
+    background-color: rgba(244, 67, 54, 0.7);
+    color: #000;
+}
+
+.team-purple {
+    background-color: rgba(156, 39, 176, 0.7);
+    color: #000;
+}
+
+@media (max-width: 480px) {
+    .table th,
+    .table td {
+        padding: 1px;
+    }
+}

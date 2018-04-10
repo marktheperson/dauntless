@@ -18,4 +18,8 @@ export class DauntlessService {
     return this._http.get('http://api.dauntlessclan.com/points');
   }
 
+  getGroupsAndAttendance():Observable<any> {
+    return this._http.get('http://api.dauntlessclan.com/groupsAndAttendance');
+  }
+
 }

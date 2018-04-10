@@ -85,6 +85,9 @@ export class ScheduleComponent implements OnInit {
                 case "PH":
                     returnValue = "nc-ambulance";
                     break;
+                case "AU":
+                    returnValue = "nc-shop";
+                    break;
                 default:
                     returnValue = "nc-alert-circle-i";
                     break;
@@ -108,7 +111,7 @@ export class ScheduleComponent implements OnInit {
                     returnValue = "Core Buff";
                     break;
                 case "PH":
-                    returnValue = "PE Dungeon Help";
+                    returnValue = "Ally Dungeon Help";
                     break;
                 default:
                     returnValue = "Something is happening";
